@@ -1,0 +1,250 @@
+/* ==========================================================================
+   MODEVA — The Fashion Directory
+   Bespoke Editorial Styles & Theme System
+   Brand Colors:
+     Midnight Plum:   #302137
+     Warm Champagne:  #E8D7B5
+     Porcelain Ivory: #FAF7F2
+   ========================================================================== */
+
+:root {
+  --color-plum: #302137;
+  --color-plum-deep: #1E1423;
+  --color-plum-surface: #281B2E;
+  --color-plum-light: #3E2B47;
+  --color-plum-muted: #533E5D;
+
+  --color-champagne: #E8D7B5;
+  --color-champagne-light: #F5ECD8;
+  --color-champagne-hover: #D8C39B;
+  --color-champagne-dark: #BA9E6B;
+  --color-champagne-glow: rgba(232, 215, 181, 0.25);
+
+  --color-ivory: #FAF7F2;
+  --color-ivory-surface: #FFFFFF;
+  --color-ivory-alt: #F3ECE1;
+  --color-ivory-border: rgba(48, 33, 55, 0.12);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --nav-height: 80px;
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory);
+  color: var(--color-plum);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Dark mode theme variables */
+body.dark-mode {
+  background-color: var(--color-plum-deep);
+  color: #F8F5F0;
+  --color-ivory-surface: var(--color-plum-surface);
+  --color-ivory-alt: var(--color-plum-light);
+  --color-ivory-border: rgba(232, 215, 181, 0.18);
+}
+
+/* Typography utilities */
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-sans-body {
+  font-family: var(--font-sans);
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--color-champagne);
+  color: var(--color-plum);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+body.dark-mode ::-webkit-scrollbar-track {
+  background: var(--color-plum-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-champagne-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-champagne);
+}
+
+/* Decorative luxury accents */
+.editorial-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-champagne), transparent);
+}
+
+.editorial-line-left {
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-champagne), transparent);
+}
+
+.champagne-border {
+  border-color: rgba(232, 215, 181, 0.4);
+}
+
+.champagne-glow {
+  box-shadow: 0 0 25px rgba(232, 215, 181, 0.18);
+}
+
+.champagne-glow-sm {
+  box-shadow: 0 4px 15px rgba(232, 215, 181, 0.12);
+}
+
+/* Glassmorphism */
+.glass-plum {
+  background: rgba(48, 33, 55, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(232, 215, 181, 0.2);
+}
+
+.glass-ivory {
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(48, 33, 55, 0.08);
+}
+
+body.dark-mode .glass-ivory {
+  background: rgba(30, 20, 35, 0.94);
+  border-bottom: 1px solid rgba(232, 215, 181, 0.15);
+}
+
+/* Card hover transitions */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(48, 33, 55, 0.08);
+}
+body.dark-mode .hover-lift:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* Image zoom effect on hover */
+.img-zoom-wrap {
+  overflow: hidden;
+}
+.img-zoom-wrap img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-zoom-wrap:hover img {
+  transform: scale(1.05);
+}
+
+/* Custom scroll container for trending items */
+.horizontal-scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-champagne) transparent;
+  scroll-behavior: smooth;
+}
+.horizontal-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-champagne);
+  border-radius: 9999px;
+}
+
+/* Subtle grain overlay for rich luxury tactile feel */
+.bg-grain {
+  background-image: radial-gradient(rgba(232, 215, 181, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Badge styling */
+.badge-verified {
+  background: rgba(232, 215, 181, 0.2);
+  color: #302137;
+  border: 1px solid rgba(232, 215, 181, 0.6);
+}
+body.dark-mode .badge-verified {
+  background: rgba(232, 215, 181, 0.15);
+  color: #E8D7B5;
+  border-color: rgba(232, 215, 181, 0.35);
+}
+
+/* Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Active Nav Indicator */
+.nav-link.active {
+  color: var(--color-champagne) !important;
+  font-weight: 600;
+  position: relative;
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-champagne);
+  border-radius: 2px;
+}
+
+/* Modal animation */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.3s ease;
+}
+.modal-content-box {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Fallback image styling */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

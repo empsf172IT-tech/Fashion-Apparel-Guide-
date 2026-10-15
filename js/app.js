@@ -22,11 +22,11 @@ const DIRECTORY_LISTINGS = [
     verified: true,
     featured: true,
     tags: ["Haute Couture", "Silk Eveningwear", "Bespoke", "Heritage"],
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=80",
     secondaryImages: [
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1550614000-4895a10e1bfd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=800&q=80"
     ],
     description: "An intimate Parisian haute atelier celebrated for architectural silhouettes, hand-draped silk organza, and rare archival fabric recreations.",
     fullStory: "Founded in 2018 in the heart of Paris' 8th arrondissement, Maison de L'Ombre marries classical French drapery with forward-thinking structural tailoring. Every evening coat and gown is cut to order, ensuring zero excess production and impeccable custom fit. Celebrated during Paris Fashion Week for their poetic restraint and sculptural minimalism.",
@@ -54,10 +54,10 @@ const DIRECTORY_LISTINGS = [
     verified: true,
     featured: true,
     tags: ["Zero-Waste", "Botanical Dyes", "Organic Linen", "Artisanal"],
-    image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=1200&q=80",
     secondaryImages: [
       "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1509319117193-57bab727e09d?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Conscious luxury born in SoHo, featuring zero-waste pattern drafting, regenerative plant dyes, and traceable deadstock textiles.",
     fullStory: "Solstice Atelier operates under a strict closed-loop manifesto: every garment is crafted from GOTS-certified organic cotton, wild nettle fibers, or salvaged luxury deadstock. Their SoHo showroom features a visible dye laboratory where guests can observe natural madder and indigo extraction processes.",
@@ -85,7 +85,7 @@ const DIRECTORY_LISTINGS = [
     verified: true,
     featured: true,
     tags: ["Genderless", "Heavyweight Fleece", "Tokyo-London Collabs", "Limited Drops"],
-    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80",
     secondaryImages: [
       "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=800&q=80"
@@ -116,10 +116,10 @@ const DIRECTORY_LISTINGS = [
     verified: true,
     featured: true,
     tags: ["Neapolitan Shoulders", "Biella Wool", "Hand-Stitched", "Sprezzatura"],
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1200&q=80",
     secondaryImages: [
       "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Bespoke Italian tailoring honoring classic spalla camicia craftsmanship, unconstructed blazers, and rare cashmere blends from Biella.",
     fullStory: "Founded by master tailor Gianluca Venti, this atelier is the Milanese benchmark for effortless sprezzatura. With hand-sewn buttonholes, floating horsehair canvas, and personalized styling consultations, each commission takes 45 hours of meticulous artisan labor.",
@@ -129,35 +129,6 @@ const DIRECTORY_LISTINGS = [
     specialties: "Unlined silk-wool jackets, bespoke formal tuxedos, hand-rolled pocket squares",
     reviews: [
       { author: "Matteo Rossi", date: "September 2026", rating: 5, comment: "Perfection in every stitch. The lightweight hopsack blazer feels like a second skin even in midsummer.", verified: true }
-    ]
-  },
-  {
-    id: 'aethelgard-co',
-    name: "Aethelgard & Co.",
-    category: "Designer Collections",
-    city: "Copenhagen",
-    location: "Copenhagen, Denmark",
-    address: "Kronprinsensgade 9, 1114 København",
-    lat: 55.6811,
-    lng: 12.5786,
-    priceRange: "$$$",
-    rating: 4.8,
-    reviewCount: 52,
-    verified: true,
-    featured: false,
-    tags: ["Nordic Minimalism", "Chunky Knitwear", "Structured Coats", "Earthy Palette"],
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80",
-    secondaryImages: [
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80"
-    ],
-    description: "Sculptural Danish design defined by architectural proportions, chunky alpaca knits, and functional timeless elegance.",
-    fullStory: "Aethelgard & Co. reinterprets Scandinavia's harsh coastal beauty into hyper-refined wool outerwear and sculptural knitwear. Their Copenhagen flagship is an architectural gem of raw travertine, blonde oak, and museum-grade lighting.",
-    hours: "Mon – Sat: 10:00 AM – 6:30 PM",
-    phone: "+45 33 12 45 89",
-    website: "https://aethelgard.example.dk",
-    specialties: "Double-face boiled wool overcoats, undyed Gotland wool knitwear",
-    reviews: [
-      { author: "Astrid Lindholm", date: "August 2026", rating: 5, comment: "The aesthetic purity is remarkable. An essential stop for any design enthusiast visiting Copenhagen.", verified: true }
     ]
   },
   {
@@ -175,9 +146,9 @@ const DIRECTORY_LISTINGS = [
     verified: true,
     featured: true,
     tags: ["Archival Fashion", "1990s Runway", "Designer Handbags", "Verified Authentic"],
-    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
     secondaryImages: [
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1537832816519-689ad163238b?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Curated archival fashion destination preserving museum-quality 80s and 90s runway pieces, verified vintage silks, and iconic leather accessories.",
     fullStory: "Stepping into Velvet Archive is like browsing a living museum of modern fashion history. Each piece comes with a provenance certificate and detailed condition report, making it a favorite sourcing haven for Hollywood stylists and fashion archivists.",
@@ -206,7 +177,7 @@ const DIRECTORY_LISTINGS = [
     tags: ["Origami Draping", "Raw Indigo", "Aoyama Concept", "Modern Kimono"],
     image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=80",
     secondaryImages: [
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Tokyo flagship blending traditional Japanese sashiko craftsmanship with avant-garde origami draping and natural indigo washes.",
     fullStory: "Nami Studio collaborates directly with weaving guilds in Okayama and Tokushima. Their garments explore the interplay between rigid structural folds and flowing asymmetric textiles.",
@@ -216,35 +187,6 @@ const DIRECTORY_LISTINGS = [
     specialties: "Sashiko hand-stitched jackets, asymmetric pleat skirts, raw selvage trench",
     reviews: [
       { author: "Kenji Sato", date: "September 2026", rating: 5, comment: "True Japanese artisan spirit with contemporary international vision. Outstanding craftsmanship.", verified: true }
-    ]
-  },
-  {
-    id: 'laura-botanique',
-    name: "L'Aura Botanique",
-    category: "Womenswear",
-    city: "Berlin",
-    location: "Berlin, Germany",
-    address: "Alte Schönhauser Str. 34, 10119 Berlin",
-    lat: 52.5273,
-    lng: 13.4077,
-    priceRange: "$$",
-    rating: 4.7,
-    reviewCount: 47,
-    verified: true,
-    featured: false,
-    tags: ["Fluid Silhouettes", "Cruelty-Free Silk", "Mitte Boutique", "Relaxed Elegance"],
-    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80",
-    secondaryImages: [
-      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80"
-    ],
-    description: "Berlin Mitte atelier specializing in effortless, fluid feminine silhouettes crafted from peace silk, Tencel, and gentle bio-resins.",
-    fullStory: "Celebrating the unhurried elegance of modern European women, L'Aura Botanique produces limited seasonal editions made exclusively within a 200km radius of Berlin to minimize carbon footprint.",
-    hours: "Tue – Sat: 12:00 PM – 7:00 PM",
-    phone: "+49 30 8920 3144",
-    website: "https://laurabotanique.example.de",
-    specialties: "Fluid slip gowns, botanical-printed kimonos, relaxed linen blazers",
-    reviews: [
-      { author: "Greta Weber", date: "August 2026", rating: 5, comment: "The drape of the peace silk is magnificent. Sustainable fashion that sacrifices zero glamour.", verified: true }
     ]
   }
 ];
@@ -258,9 +200,9 @@ const CURATED_COLLECTIONS = [
     title: "The Independent Labels Worth Discovering",
     subtitle: "Original voices defying mass market conventions",
     category: "Independent Boutiques",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1200&q=80",
     description: "An intimate exploration of designer-owned spaces where craft, provenance, and idiosyncratic aesthetics take center stage over fleeting trends.",
-    listingIds: ['solstice-atelier', 'nami-studio', 'laura-botanique'],
+    listingIds: ['solstice-atelier', 'nami-studio'],
     curatorQuote: "These are the creators who still cut patterns by hand and know the name of every textile mill they partner with."
   },
   {
@@ -268,9 +210,9 @@ const CURATED_COLLECTIONS = [
     title: "Contemporary Designers to Watch",
     subtitle: "New silhouettes reshaping the modern wardrobe",
     category: "Designer Collections",
-    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1200&q=80",
     description: "From deconstructed suiting to hyper-tactile knitwear, meet the visionary design houses redefining day-to-night luxury across Europe and Asia.",
-    listingIds: ['maison-delombre', 'kin-contemporary', 'aethelgard-co'],
+    listingIds: ['maison-delombre', 'kin-contemporary'],
     curatorQuote: "We look for sharp structural clarity combined with an effortless, lived-in sensibility."
   },
   {
@@ -280,7 +222,7 @@ const CURATED_COLLECTIONS = [
     category: "Sustainable Fashion",
     image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80",
     description: "Eco-conscious studios demonstrating that radical environmental responsibility can coexist with uncompromising runway grandeur.",
-    listingIds: ['solstice-atelier', 'laura-botanique'],
+    listingIds: ['solstice-atelier'],
     curatorQuote: "True sustainability is not a marketing label—it is a completely re-engineered supply chain."
   },
   {
@@ -288,7 +230,7 @@ const CURATED_COLLECTIONS = [
     title: "Hidden Boutique Gems of European Capitals",
     subtitle: "Secret courtyards and tucked-away flagships",
     category: "Luxury Fashion",
-    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=1200&q=80",
     description: "Curated shopping addresses in Paris, Milan, and London known only to industry insiders, stylists, and discerning collectors.",
     listingIds: ['maison-delombre', 'sartoria-venti', 'velvet-archive'],
     curatorQuote: "Shopping in these spaces is a sensorial journey reminiscent of golden age haute couture salons."
@@ -298,7 +240,7 @@ const CURATED_COLLECTIONS = [
     title: "The Modern Streetwear Edit",
     subtitle: "Refined utility, heavyweight fleece, and architectural sportswear",
     category: "Streetwear & Contemporary",
-    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
     description: "Where street culture converges with luxury textile mills. Elevate your everyday silhouette with precision cuts and limited drops.",
     listingIds: ['kin-contemporary', 'nami-studio'],
     curatorQuote: "Comfort engineered with couture-level attention to seam placement and weight."
@@ -323,7 +265,7 @@ const TRENDING_BRANDS = [
     specialty: "Monochromatic Silk Georgette & Tailoring",
     tag: "Editor's Choice",
     description: "Celebrated at NYFW for razor-sharp shoulder lines and fluid floor-sweeping silk palazzos.",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80"
   },
   {
     name: "Sora Oblique",
@@ -331,7 +273,7 @@ const TRENDING_BRANDS = [
     specialty: "Hand-Pleated Washi Paper Garments",
     tag: "Avant-Garde",
     description: "Interweaving ancient Japanese washi paper thread with French wild silk for structural dresses that defy gravity.",
-    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
   },
   {
     name: "ELYSIAN Knitwear",
@@ -347,7 +289,7 @@ const TRENDING_BRANDS = [
     specialty: "Bespoke Velvet Evening Smoking Jackets",
     tag: "Bespoke",
     description: "Opulent silk-velvet dinner jackets with quilted silk linings and monogrammed horn buttons.",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
@@ -361,7 +303,7 @@ const JOURNAL_ARTICLES = [
     readTime: "6 min read",
     title: "How to Discover Independent Fashion Designers",
     excerpt: "Moving beyond algorithmically driven high-street feeds to uncover authentic ateliers, showroom salons, and bespoke craftspeople across world capitals.",
-    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
     author: "Genevieve Moreau — Fashion Features Director",
     date: "October 12, 2026",
     content: `
@@ -380,7 +322,7 @@ const JOURNAL_ARTICLES = [
     readTime: "8 min read",
     title: "A Guide to Finding Genuine Sustainable Clothing Brands",
     excerpt: "Demystifying greenwashing: how to evaluate natural fibers, deadstock salvage, closed-loop dyeing, and true garment longevity.",
-    image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1200&q=80",
     author: "Elena Rostova — Sustainable Textiles Editor",
     date: "October 08, 2026",
     content: `
@@ -397,7 +339,7 @@ const JOURNAL_ARTICLES = [
     readTime: "5 min read",
     title: "The Best Ways to Explore Local Fashion Boutiques",
     excerpt: "An insider's roadmap to navigating the backstreets of Le Marais, Soho, Shoreditch, and Brera like a seasoned fashion director.",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=1200&q=80",
     author: "Julian St. Claire — European Editor at Large",
     date: "September 29, 2026",
     content: `
@@ -414,7 +356,7 @@ const JOURNAL_ARTICLES = [
     readTime: "7 min read",
     title: "Understanding Contemporary and Luxury Fashion Categories",
     excerpt: "Unpacking the stylistic nuances separating Haute Couture, Ready-to-Wear, Demi-Couture, and elevated Contemporary streetwear.",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1200&q=80",
     author: "Margot de la Tour — Fashion Historian",
     date: "September 18, 2026",
     content: `
@@ -500,15 +442,20 @@ function initTheme() {
 
 function applyTheme(theme) {
   const body = document.body;
+  const html = document.documentElement;
   const themeIcons = document.querySelectorAll('.theme-toggle-icon');
   
   if (theme === 'dark') {
     body.classList.add('dark-mode');
+    body.classList.add('dark');
+    html.classList.add('dark');
     themeIcons.forEach(icon => {
       icon.innerHTML = `<svg class="w-5 h-5 text-[#E8D7B5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`;
     });
   } else {
     body.classList.remove('dark-mode');
+    body.classList.remove('dark');
+    html.classList.remove('dark');
     themeIcons.forEach(icon => {
       icon.innerHTML = `<svg class="w-5 h-5 text-[#302137]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>`;
     });
@@ -531,35 +478,35 @@ const CATEGORIES_DATA = [
     name: "Luxury Fashion",
     count: "48 Boutiques",
     description: "High-end couture, architectural silhouettes, and bespoke tailoring houses.",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=800&q=80",
     gridSpan: "col-span-12 md:col-span-7 row-span-2 min-h-[380px] md:min-h-[460px]"
   },
   {
     name: "Independent Boutiques",
     count: "64 Ateliers",
     description: "Curated designer spaces with idiosyncratic aesthetics and limited runs.",
-    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=800&q=80",
     gridSpan: "col-span-12 md:col-span-5 min-h-[220px]"
   },
   {
     name: "Streetwear & Contemporary",
     count: "39 Destinations",
     description: "Elevated utilitarian cuts, oversized heavyweight fleece, and drops.",
-    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
     gridSpan: "col-span-12 md:col-span-5 min-h-[220px]"
   },
   {
     name: "Sustainable Fashion",
     count: "32 Studios",
     description: "Regenerative textiles, botanical dyes, and circular zero-waste craftsmanship.",
-    image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&q=80",
     gridSpan: "col-span-12 md:col-span-4 min-h-[260px]"
   },
   {
     name: "Designer Collections",
     count: "51 Labels",
     description: "Runway-acclaimed labels presenting seasonal conceptual masterworks.",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=800&q=80",
     gridSpan: "col-span-12 md:col-span-4 min-h-[260px]"
   },
   {
@@ -580,7 +527,7 @@ const CATEGORIES_DATA = [
     name: "Womenswear",
     count: "78 Showrooms",
     description: "Draped bias cuts, conscious silk slips, and empowering daytime elegance.",
-    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80",
     gridSpan: "col-span-12 md:col-span-6 min-h-[280px]"
   }
 ];
@@ -791,39 +738,58 @@ function renderCuratedCollections() {
 
   container.innerHTML = CURATED_COLLECTIONS.map((col, idx) => {
     const isEven = idx % 2 === 1;
+    const featuredListings = col.listingIds
+      .map(id => DIRECTORY_LISTINGS.find(item => item.id === id))
+      .filter(Boolean);
+
     return `
       <div class="relative bg-white dark:bg-[#281B2E] rounded-3xl border border-[#302137]/10 dark:border-[#E8D7B5]/20 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
         <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
           
           <!-- Editorial Image Column -->
-          <div class="lg:col-span-6 relative overflow-hidden min-h-[300px] lg:min-h-[440px] ${isEven ? 'lg:order-2' : ''}">
-            <img src="${col.image}" alt="${col.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#302137]/60 via-transparent to-transparent lg:hidden"></div>
-            <div class="absolute bottom-4 left-4 lg:bottom-6 lg:left-6 bg-[#302137]/85 backdrop-blur-md px-4 py-2 rounded-xl border border-[#E8D7B5]/30">
-              <span class="text-[11px] uppercase tracking-widest text-[#E8D7B5] font-semibold block">Curated Edit 0${idx + 1}</span>
-              <span class="text-xs text-[#FAF7F2] font-light">${col.category}</span>
+          <div class="lg:col-span-5 relative overflow-hidden min-h-[260px] sm:min-h-[320px] lg:min-h-[420px] ${isEven ? 'lg:order-2' : ''}">
+            <img src="${col.image}" alt="${col.title}" loading="lazy" class="w-full h-full lg:absolute lg:inset-0 object-cover transition-transform duration-700 hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1E1423]/70 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-4 left-4 lg:bottom-6 lg:left-6 bg-[#302137]/90 dark:bg-[#1E1423]/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-[#E8D7B5]/40 shadow-lg">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-[#E8D7B5] font-semibold block">Curated Edit 0${idx + 1}</span>
+              <span class="text-xs text-[#FAF7F2] font-medium">${col.category}</span>
             </div>
           </div>
 
           <!-- Editorial Text Column -->
-          <div class="lg:col-span-6 p-8 md:p-12 flex flex-col justify-between ${isEven ? 'lg:order-1' : ''}">
+          <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-center ${isEven ? 'lg:order-1' : ''}">
             <div>
-              <div class="flex items-center gap-2 mb-3">
+              <div class="flex items-center gap-2 mb-2.5">
                 <span class="w-6 h-[1px] bg-[#E8D7B5]"></span>
-                <span class="text-xs uppercase tracking-widest font-semibold text-[#302137]/60 dark:text-[#E8D7B5]">Volume Autumn/Winter</span>
+                <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#302137]/60 dark:text-[#E8D7B5]">Volume Autumn/Winter • Edit 0${idx + 1}</span>
               </div>
 
-              <h3 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-[#302137] dark:text-[#FAF7F2] leading-tight mb-4">
+              <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#302137] dark:text-[#FAF7F2] leading-tight mb-2">
                 ${col.title}
               </h3>
 
-              <p class="text-sm md:text-base text-[#302137]/80 dark:text-[#FAF7F2]/80 font-light leading-relaxed mb-6">
+              ${col.subtitle ? `<p class="text-xs sm:text-sm font-medium italic text-[#BA9E6B] dark:text-[#E8D7B5] mb-3">${col.subtitle}</p>` : ''}
+
+              <p class="text-xs sm:text-sm text-[#302137]/80 dark:text-[#FAF7F2]/80 font-light leading-relaxed mb-4">
                 ${col.description}
               </p>
 
+              <!-- Featured Boutiques Preview Pills -->
+              <div class="mb-4">
+                <span class="text-[10px] uppercase tracking-wider font-semibold text-[#302137]/60 dark:text-[#E8D7B5]/80 block mb-2">Featured Ateliers & Designers:</span>
+                <div class="flex flex-wrap gap-2">
+                  ${featuredListings.map(item => `
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#FAF7F2] dark:bg-[#1E1423] border border-[#302137]/10 dark:border-[#E8D7B5]/25 text-[#302137] dark:text-[#FAF7F2] font-medium shadow-2xs">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#E8D7B5]"></span>
+                      ${item.name} <span class="opacity-60 text-[10px]">(${item.city})</span>
+                    </span>
+                  `).join('')}
+                </div>
+              </div>
+
               <!-- Curator Note Quote -->
-              <div class="p-4 rounded-2xl bg-[#FAF7F2] dark:bg-[#1E1423] border-l-2 border-[#E8D7B5] mb-6">
-                <p class="text-xs italic text-[#302137]/85 dark:text-[#FAF7F2]/85">
+              <div class="p-3.5 sm:p-4 rounded-2xl bg-[#FAF7F2] dark:bg-[#1E1423] border-l-2 border-[#E8D7B5] mb-5">
+                <p class="text-xs italic text-[#302137]/85 dark:text-[#FAF7F2]/85 leading-relaxed">
                   "${col.curatorQuote}"
                 </p>
                 <span class="text-[10px] uppercase tracking-wider font-semibold text-[#E8D7B5] block mt-1.5">— MODEVA Editorial Board</span>
@@ -833,10 +799,10 @@ function renderCuratedCollections() {
             <!-- Action Buttons -->
             <div class="pt-4 border-t border-[#302137]/10 dark:border-[#E8D7B5]/15 flex flex-wrap items-center justify-between gap-4">
               <div class="flex items-center gap-2">
-                <span class="text-xs text-[#302137]/60 dark:text-[#FAF7F2]/60">${col.listingIds.length} Flagship Ateliers Featured</span>
+                <span class="text-xs text-[#302137]/60 dark:text-[#FAF7F2]/60 font-medium">${col.listingIds.length} Verified Flagships Featured</span>
               </div>
 
-              <button onclick="openCollectionModal('${col.id}')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#302137] text-[#E8D7B5] dark:bg-[#E8D7B5] dark:text-[#302137] font-semibold text-xs tracking-wider uppercase hover:opacity-90 transition-opacity">
+              <button onclick="openCollectionModal('${col.id}')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#302137] text-[#E8D7B5] dark:bg-[#E8D7B5] dark:text-[#302137] font-semibold text-xs tracking-wider uppercase hover:opacity-90 transition-opacity shadow-md">
                 <span>Explore Collection</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </button>
@@ -1787,25 +1753,56 @@ function setupEventListeners() {
   // Mobile menu drawer
   const mobileMenuBtn = document.getElementById('mobileMenuToggle');
   const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+  const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+  const mobileMenuPanel = document.getElementById('mobileMenuPanel');
   const mobileMenuClose = document.getElementById('mobileMenuClose');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-  if (mobileMenuBtn && mobileMenuDrawer) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenuDrawer.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    });
-  }
-
-  const closeMobileMenu = () => {
-    if (mobileMenuDrawer) {
-      mobileMenuDrawer.classList.add('hidden');
-      document.body.style.overflow = '';
+  const openMobileMenu = () => {
+    if (!mobileMenuDrawer || !mobileMenuPanel || !mobileMenuBackdrop) return;
+    if (typeof window.updateActiveNavLinks === 'function') {
+      window.updateActiveNavLinks();
     }
+    mobileMenuDrawer.classList.remove('pointer-events-none');
+    mobileMenuDrawer.setAttribute('aria-hidden', 'false');
+    mobileMenuBtn?.setAttribute('aria-expanded', 'true');
+    mobileMenuBackdrop.classList.remove('opacity-0');
+    mobileMenuBackdrop.classList.add('opacity-100');
+    mobileMenuPanel.classList.remove('translate-x-full');
+    mobileMenuPanel.classList.add('translate-x-0');
+    document.body.style.overflow = 'hidden';
   };
 
+  const closeMobileMenu = () => {
+    if (!mobileMenuDrawer || !mobileMenuPanel || !mobileMenuBackdrop) return;
+    mobileMenuDrawer.classList.add('pointer-events-none');
+    mobileMenuDrawer.setAttribute('aria-hidden', 'true');
+    mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+    mobileMenuBackdrop.classList.remove('opacity-100');
+    mobileMenuBackdrop.classList.add('opacity-0');
+    mobileMenuPanel.classList.remove('translate-x-0');
+    mobileMenuPanel.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+  };
+
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
   if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
-  mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+  if (mobileMenuBackdrop) mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+  
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNavLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      closeMobileMenu();
+    });
+  });
+
+  // Escape key closes mobile drawer
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenuDrawer && !mobileMenuDrawer.classList.contains('pointer-events-none')) {
+      closeMobileMenu();
+    }
+  });
 }
 
 // ==========================================
@@ -1813,11 +1810,12 @@ function setupEventListeners() {
 // ==========================================
 function setupScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const desktopLinks = document.querySelectorAll('.nav-link');
+  const mobileLinks = document.querySelectorAll('nav .mobile-nav-link');
 
-  window.addEventListener('scroll', () => {
+  function updateActiveNavLinks() {
     let currentId = '';
-    const scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY + 140;
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -1827,14 +1825,45 @@ function setupScrollSpy() {
       }
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
+    // Default to hero if at top of page
+    if (!currentId && window.scrollY < 250) {
+      currentId = 'hero';
+    }
+
+    // If reached bottom of document, activate last section
+    if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 60) {
+      const lastSection = Array.from(sections).filter(s => s.id !== 'closing').pop();
+      if (lastSection) currentId = lastSection.id;
+    }
+
+    // Update Desktop Navigation Links
+    desktopLinks.forEach(link => {
       const href = link.getAttribute('href');
       if (href === `#${currentId}`) {
         link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
-  });
+
+    // Update Mobile & Tablet Drawer Links
+    mobileLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${currentId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNavLinks, { passive: true });
+  
+  // Synchronize on page load
+  updateActiveNavLinks();
+
+  // Expose to window so mobile menu open event triggers immediate sync
+  window.updateActiveNavLinks = updateActiveNavLinks;
 }
 
 // ==========================================
@@ -1843,8 +1872,9 @@ function setupScrollSpy() {
 function setupImageFallbacks() {
   document.querySelectorAll('img').forEach(img => {
     img.addEventListener('error', function() {
-      // Graceful high-contrast fashion fallback
-      this.src = "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80";
+      if (this.dataset.fallbackApplied) return;
+      this.dataset.fallbackApplied = 'true';
+      this.src = "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=1200&q=80";
     });
   });
 }

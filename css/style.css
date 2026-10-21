@@ -124,18 +124,12 @@ body:not(.dark-mode) .text-\[\#BA9E6B\]:not(button):not(button *):not(a[class*="
    CTA Buttons & Dark Action Elements — Radiant Bright Ivory Text
    ========================================================================== */
 /* Any button or CTA element with dark background MUST have bright, radiant ivory/white text */
-body:not(.dark-mode) button[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn),
-body:not(.dark-mode) a[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn),
-body:not(.dark-mode) button[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn) span:not(.theme-toggle-icon),
-body:not(.dark-mode) a[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn) span,
-body:not(.dark-mode) button[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn) svg,
-body:not(.dark-mode) a[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn) svg,
-body:not(.dark-mode) button[onclick*="openListingModal"],
-body:not(.dark-mode) button[onclick*="openListingModal"] span,
-body:not(.dark-mode) button[onclick*="openListingModal"] svg,
-body:not(.dark-mode) button[onclick*="openCollectionModal"],
-body:not(.dark-mode) button[onclick*="openCollectionModal"] span,
-body:not(.dark-mode) button[onclick*="openCollectionModal"] svg,
+body:not(.dark-mode) button[class~="bg-[#302137]"]:not(.theme-toggle-btn):not(.footer-social-btn),
+body:not(.dark-mode) a[class~="bg-[#302137]"]:not(.theme-toggle-btn):not(.footer-social-btn),
+body:not(.dark-mode) button[class~="bg-[#302137]"]:not(.theme-toggle-btn):not(.footer-social-btn) span:not(.theme-toggle-icon),
+body:not(.dark-mode) a[class~="bg-[#302137]"]:not(.theme-toggle-btn):not(.footer-social-btn) span,
+body:not(.dark-mode) button[class~="bg-[#302137]"]:not(.theme-toggle-btn):not(.footer-social-btn) svg,
+body:not(.dark-mode) a[class~="bg-[#302137]"]:not(.theme-toggle-btn):not(.footer-social-btn) svg,
 body:not(.dark-mode) #heroSearchForm button,
 body:not(.dark-mode) #heroSearchForm button span,
 body:not(.dark-mode) #heroSearchForm button svg {
@@ -573,6 +567,155 @@ body.dark-mode .badge-verified {
   background: rgba(232, 215, 181, 0.15);
   color: #E8D7B5;
   border-color: rgba(232, 215, 181, 0.35);
+}
+
+/* ==========================================================================
+   Section 03: Discover Fashion Near You — View Details Action Button
+   Guaranteed High Contrast in Light Mode & Dark Mode
+   ========================================================================== */
+.nearby-view-details-btn,
+#nearbyResultsContainer button.nearby-view-details-btn,
+#nearbyResultsContainer .nearby-view-details-btn,
+body:not(.dark-mode) .nearby-view-details-btn,
+body:not(.dark-mode) #nearbyResultsContainer button,
+body:not(.dark-mode) #nearbyResultsContainer .nearby-view-details-btn {
+  color: #1E1423 !important;
+  font-weight: 800 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.nearby-view-details-btn span,
+#nearbyResultsContainer button.nearby-view-details-btn span,
+#nearbyResultsContainer .nearby-view-details-btn span,
+body:not(.dark-mode) .nearby-view-details-btn span,
+body:not(.dark-mode) #nearbyResultsContainer button span,
+body:not(.dark-mode) #nearbyResultsContainer .nearby-view-details-btn span {
+  color: #1E1423 !important;
+  font-weight: 800 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.nearby-view-details-btn svg,
+#nearbyResultsContainer button.nearby-view-details-btn svg,
+#nearbyResultsContainer .nearby-view-details-btn svg,
+body:not(.dark-mode) .nearby-view-details-btn svg,
+body:not(.dark-mode) #nearbyResultsContainer button svg,
+body:not(.dark-mode) #nearbyResultsContainer .nearby-view-details-btn svg {
+  color: #1E1423 !important;
+  stroke: #1E1423 !important;
+  stroke-width: 2.5 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: transform 0.2s ease !important;
+}
+
+body:not(.dark-mode) .nearby-view-details-btn:hover,
+body:not(.dark-mode) #nearbyResultsContainer .nearby-view-details-btn:hover,
+body:not(.dark-mode) .nearby-view-details-btn:hover span,
+body:not(.dark-mode) #nearbyResultsContainer .nearby-view-details-btn:hover span {
+  color: #7A5520 !important;
+}
+
+body:not(.dark-mode) .nearby-view-details-btn:hover svg,
+body:not(.dark-mode) #nearbyResultsContainer .nearby-view-details-btn:hover svg {
+  color: #7A5520 !important;
+  stroke: #7A5520 !important;
+  transform: translateX(4px) !important;
+}
+
+/* Dark mode ONLY: radiant warm champagne #E8D7B5 */
+body.dark-mode .nearby-view-details-btn,
+body.dark-mode #nearbyResultsContainer .nearby-view-details-btn,
+body.dark .nearby-view-details-btn,
+body.dark #nearbyResultsContainer .nearby-view-details-btn,
+html.dark .nearby-view-details-btn,
+html.dark #nearbyResultsContainer .nearby-view-details-btn {
+  color: #E8D7B5 !important;
+}
+
+body.dark-mode .nearby-view-details-btn span,
+body.dark-mode #nearbyResultsContainer .nearby-view-details-btn span,
+body.dark .nearby-view-details-btn span,
+body.dark #nearbyResultsContainer .nearby-view-details-btn span,
+html.dark .nearby-view-details-btn span,
+html.dark #nearbyResultsContainer .nearby-view-details-btn span {
+  color: #E8D7B5 !important;
+}
+
+body.dark-mode .nearby-view-details-btn svg,
+body.dark-mode #nearbyResultsContainer .nearby-view-details-btn svg,
+body.dark .nearby-view-details-btn svg,
+body.dark #nearbyResultsContainer .nearby-view-details-btn svg,
+html.dark .nearby-view-details-btn svg,
+html.dark #nearbyResultsContainer .nearby-view-details-btn svg {
+  color: #E8D7B5 !important;
+  stroke: #E8D7B5 !important;
+}
+
+body.dark-mode .nearby-view-details-btn:hover,
+body.dark-mode .nearby-view-details-btn:hover span,
+html.dark .nearby-view-details-btn:hover,
+html.dark .nearby-view-details-btn:hover span {
+  color: #FAF7F2 !important;
+}
+
+body.dark-mode .nearby-view-details-btn:hover svg,
+html.dark .nearby-view-details-btn:hover svg {
+  color: #FAF7F2 !important;
+  stroke: #FAF7F2 !important;
+  transform: translateX(4px) !important;
+}
+
+/* ==========================================================================
+   View Details Modal Dossier Badges — Optical Centering & Balanced Padding
+   ========================================================================== */
+.modal-dossier-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 14px !important;
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  border-radius: 9999px !important;
+  box-sizing: border-box !important;
+  vertical-align: middle !important;
+  min-height: 28px !important;
+}
+
+.modal-dossier-badge.modal-dossier-category {
+  background-color: #E8D7B5 !important;
+  color: #1E1423 !important;
+  border: 1px solid rgba(232, 215, 181, 0.9) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+}
+
+.modal-dossier-badge.modal-dossier-verified {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45) !important;
+}
+
+.modal-dossier-badge svg {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
 }
 
 /* Animations */

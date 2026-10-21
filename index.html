@@ -62,7 +62,7 @@
   </script>
 
   <!-- Bespoke Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2.1">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -1215,11 +1215,29 @@
         <!-- Col 5: Contact & Bureaus -->
         <div class="lg:col-span-2">
           <h4 class="text-xs font-semibold uppercase tracking-widest text-[#302137] dark:text-[#E8D7B5] mb-4">Editorial Bureaus</h4>
-          <p class="text-xs text-[#302137]/75 dark:text-[#FAF7F2]/70 font-light leading-relaxed mb-3">
-            7 Place Vendôme, 75001 Paris<br />
-            44 Berkeley Square, London W1J 5AR
-          </p>
-          <p class="text-xs text-[#BA9E6B] dark:text-[#E8D7B5] font-medium">curation@modeva.example.com</p>
+          <div class="space-y-3 text-xs">
+            <!-- Bureau Addresses with Location Pin Icon -->
+            <div class="flex items-start gap-2.5 text-[#302137]/75 dark:text-[#FAF7F2]/75 font-light">
+              <svg class="w-4 h-4 text-[#BA9E6B] dark:text-[#E8D7B5] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <div class="leading-relaxed">
+                <span class="block text-[#1E1423] dark:text-[#FAF7F2] font-medium">7 Place Vendôme, 75001 Paris</span>
+                <span class="block mt-0.5 text-[#302137]/70 dark:text-[#FAF7F2]/70 font-normal">44 Berkeley Square, London W1J 5AR</span>
+              </div>
+            </div>
+
+            <!-- Email Contact with Envelope Icon -->
+            <div class="flex items-center gap-2.5 pt-1">
+              <svg class="w-4 h-4 text-[#BA9E6B] dark:text-[#E8D7B5] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <a href="mailto:curation@modeva.example.com" class="text-xs text-[#BA9E6B] dark:text-[#E8D7B5] hover:text-[#7A5520] dark:hover:text-white font-medium transition-colors hover:underline break-all">
+                curation@modeva.example.com
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1391,7 +1409,7 @@
   <div id="toastContainer" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
   <!-- Main Application Logic Script -->
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=2.1"></script>
 
 </body>
 </html>

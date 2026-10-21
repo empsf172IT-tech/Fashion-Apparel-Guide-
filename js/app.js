@@ -664,9 +664,9 @@ function renderNearbySection() {
               <span class="text-xs text-[#302137]/80 dark:text-[#FAF7F2]/70 font-medium">(${item.reviewCount} reviews)</span>
             </div>
 
-            <button onclick="openListingModal('${item.id}')" class="text-xs font-bold tracking-wider uppercase text-[#1E1423] dark:text-[#E8D7B5] hover:underline flex items-center gap-1">
-              <span>View Details</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <button onclick="openListingModal('${item.id}')" class="nearby-view-details-btn text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 transition-all" style="color: #1E1423 !important;">
+              <span style="color: inherit !important;">View Details</span>
+              <svg class="w-3.5 h-3.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </button>
           </div>
         </div>
@@ -1412,14 +1412,14 @@ function openListingModal(listingId) {
           <!-- Badges & Title in Banner -->
           <div class="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-4 z-10">
             <div>
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span class="inline-flex items-center justify-center px-3.5 py-1.5 text-xs uppercase tracking-widest font-semibold rounded-full bg-[#E8D7B5] text-[#302137] shadow-sm leading-none">
-                  ${item.category}
+              <div class="flex flex-wrap items-center gap-2.5 mb-3">
+                <span class="modal-dossier-badge modal-dossier-category inline-flex items-center justify-center px-4 py-1.5 text-xs uppercase tracking-wider font-bold rounded-full bg-[#E8D7B5] text-[#1E1423] shadow-md border border-[#E8D7B5]">
+                  <span>${item.category}</span>
                 </span>
                 ${item.verified ? `
-                  <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs uppercase tracking-widest font-semibold rounded-full bg-white/20 text-[#FAF7F2] backdrop-blur-sm border border-white/20 leading-none shadow-sm">
-                    <svg class="w-3.5 h-3.5 text-[#E8D7B5]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                    Verified Boutique
+                  <span class="modal-dossier-badge modal-dossier-verified inline-flex items-center gap-1.5 px-4 py-1.5 text-xs uppercase tracking-wider font-bold rounded-full bg-white/20 text-[#FAF7F2] backdrop-blur-md border border-white/30 shadow-md">
+                    <svg class="w-3.5 h-3.5 text-[#E8D7B5] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>Verified Boutique</span>
                   </span>
                 ` : ''}
               </div>

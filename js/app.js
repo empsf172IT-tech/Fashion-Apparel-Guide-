@@ -663,11 +663,6 @@ function renderNearbySection() {
               <span class="text-xs font-bold text-[#1E1423] dark:text-[#FAF7F2]">${item.rating}</span>
               <span class="text-xs text-[#302137]/80 dark:text-[#FAF7F2]/70 font-medium">(${item.reviewCount} reviews)</span>
             </div>
-
-            <button onclick="openListingModal('${item.id}')" class="nearby-view-details-btn text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 transition-all" style="color: #1E1423 !important;">
-              <span style="color: inherit !important;">View Details</span>
-              <svg class="w-3.5 h-3.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </button>
           </div>
         </div>
       </div>

@@ -450,14 +450,14 @@ function applyTheme(theme) {
     body.classList.add('dark');
     html.classList.add('dark');
     themeIcons.forEach(icon => {
-      icon.innerHTML = `<svg class="w-5 h-5 text-[#E8D7B5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`;
+      icon.innerHTML = `<svg class="w-5 h-5 text-[#E8D7B5]" fill="none" stroke="#E8D7B5" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`;
     });
   } else {
     body.classList.remove('dark-mode');
     body.classList.remove('dark');
     html.classList.remove('dark');
     themeIcons.forEach(icon => {
-      icon.innerHTML = `<svg class="w-5 h-5 text-[#302137]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>`;
+      icon.innerHTML = `<svg class="w-5 h-5 text-[#1E1423]" fill="none" stroke="#1E1423" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>`;
     });
   }
 
@@ -537,34 +537,36 @@ function renderCategoriesGrid() {
   if (!container) return;
 
   container.innerHTML = CATEGORIES_DATA.map((cat, index) => `
-    <div class="relative group cursor-pointer overflow-hidden rounded-2xl border border-[#302137]/10 dark:border-[#E8D7B5]/20 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${cat.gridSpan}"
+    <div class="relative group cursor-pointer overflow-hidden rounded-2xl border border-[#302137]/15 dark:border-[#E8D7B5]/20 shadow-md transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl ${cat.gridSpan}"
          onclick="filterDirectoryByCategory('${cat.name}')">
       <!-- Background Image with Zoom -->
       <img src="${cat.image}" 
            alt="${cat.name} editorial imagery" 
            loading="lazy"
-           class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-108 filter brightness-[0.88] dark:brightness-[0.75] group-hover:brightness-95" />
+           class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-108 filter brightness-[0.82] dark:brightness-[0.70] group-hover:brightness-90" />
       
-      <!-- Gradient Overlays for High Contrast -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#302137]/90 via-[#302137]/40 to-transparent"></div>
+      <!-- Rich Gradient Overlay for Maximum Text Pop -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-[#1E1423]/70 to-transparent pointer-events-none"></div>
       
       <!-- Editorial Content -->
       <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-between z-10">
         <div class="flex justify-between items-start">
-          <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[#302137] bg-[#E8D7B5] rounded-full shadow-sm">
+          <span class="inline-block px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-[#1E1423] bg-[#E8D7B5] rounded-full shadow-md">
             ${cat.count}
           </span>
-          <div class="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-[#FAF7F2] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:bg-[#E8D7B5] group-hover:text-[#302137]">
+          <div class="w-9 h-9 rounded-full bg-white/25 backdrop-blur-md flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:bg-[#E8D7B5] group-hover:text-[#1E1423] shadow-md">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </div>
         </div>
 
         <div>
-          <span class="text-xs uppercase tracking-widest text-[#E8D7B5]/90 mb-1 block">Curated Category 0${index + 1}</span>
-          <h3 class="font-serif text-2xl md:text-3xl text-[#FAF7F2] font-semibold mb-2 group-hover:text-[#E8D7B5] transition-colors">
+          <div class="mb-2.5">
+            <span class="category-tag">Curated Category 0${index + 1}</span>
+          </div>
+          <h3 class="category-title font-serif text-2xl md:text-3xl text-white font-bold mb-2 group-hover:text-[#E8D7B5] transition-colors drop-shadow-md">
             ${cat.name}
           </h3>
-          <p class="text-xs md:text-sm text-[#FAF7F2]/80 line-clamp-2 max-w-md font-light">
+          <p class="category-desc text-sm sm:text-[15px] text-white font-normal line-clamp-2 max-w-md leading-relaxed drop-shadow-md">
             ${cat.description}
           </p>
         </div>
@@ -623,7 +625,7 @@ function renderNearbySection() {
         <!-- Thumbnail -->
         <div class="w-full sm:w-44 h-48 sm:h-auto rounded-xl overflow-hidden relative flex-shrink-0">
           <img src="${item.image}" alt="${item.name}" loading="lazy" class="w-full h-full object-cover" />
-          <span class="absolute top-2.5 left-2.5 text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full bg-[#302137]/85 text-[#E8D7B5] backdrop-blur-sm">
+          <span class="inline-flex items-center justify-center absolute top-2.5 left-2.5 text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#302137]/90 text-[#E8D7B5] backdrop-blur-sm border border-[#E8D7B5]/30 leading-tight shadow-sm">
             ${item.priceRange}
           </span>
           <button onclick="toggleFavorite('${item.id}', event)" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/80 dark:bg-[#302137]/80 backdrop-blur-sm flex items-center justify-center text-[#302137] dark:text-[#E8D7B5] hover:scale-110 transition-transform" title="Save to favorites">
@@ -637,32 +639,32 @@ function renderNearbySection() {
         <div class="flex-1 flex flex-col justify-between">
           <div>
             <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-              <span class="text-xs font-semibold tracking-wider uppercase text-[#E8D7B5] bg-[#302137] dark:bg-[#3E2B47] px-2.5 py-0.5 rounded-full">
+              <span class="inline-flex items-center justify-center px-3.5 py-1 text-[11px] font-semibold tracking-wider uppercase text-[#E8D7B5] bg-[#302137] dark:bg-[#3E2B47] rounded-full border border-[#E8D7B5]/25 leading-normal shadow-2xs">
                 ${item.category}
               </span>
-              <div class="flex items-center gap-1.5 text-xs text-[#302137]/70 dark:text-[#FAF7F2]/70">
-                <svg class="w-3.5 h-3.5 text-[#E8D7B5]" fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+              <div class="flex items-center gap-1.5 text-xs text-[#261A2B] dark:text-[#FAF7F2]/80 font-medium">
+                <svg class="w-3.5 h-3.5 text-[#BA9E6B]" fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
                 <span>${distanceLabel}</span>
               </div>
             </div>
 
-            <h4 class="font-serif text-xl font-bold text-[#302137] dark:text-[#FAF7F2] hover:text-[#E8D7B5] transition-colors cursor-pointer" onclick="openListingModal('${item.id}')">
+            <h4 class="font-serif text-xl font-bold text-[#1E1423] dark:text-[#FAF7F2] hover:text-[#BA9E6B] transition-colors cursor-pointer" onclick="openListingModal('${item.id}')">
               ${item.name}
             </h4>
             
-            <p class="text-xs text-[#302137]/75 dark:text-[#FAF7F2]/75 line-clamp-2 my-2 font-light">
+            <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2]/85 line-clamp-2 my-2.5 font-normal leading-relaxed">
               ${item.description}
             </p>
           </div>
 
-          <div class="pt-3 border-t border-[#302137]/10 dark:border-[#E8D7B5]/15 flex items-center justify-between mt-2">
+          <div class="pt-3 border-t border-[#302137]/15 dark:border-[#E8D7B5]/15 flex items-center justify-between mt-2">
             <div class="flex items-center gap-1.5">
               <span class="text-amber-500 text-sm">★</span>
-              <span class="text-xs font-bold text-[#302137] dark:text-[#FAF7F2]">${item.rating}</span>
-              <span class="text-[11px] text-[#302137]/60 dark:text-[#FAF7F2]/60">(${item.reviewCount} reviews)</span>
+              <span class="text-xs font-bold text-[#1E1423] dark:text-[#FAF7F2]">${item.rating}</span>
+              <span class="text-xs text-[#302137]/80 dark:text-[#FAF7F2]/70 font-medium">(${item.reviewCount} reviews)</span>
             </div>
 
-            <button onclick="openListingModal('${item.id}')" class="text-xs font-semibold tracking-wider uppercase text-[#302137] dark:text-[#E8D7B5] hover:underline flex items-center gap-1">
+            <button onclick="openListingModal('${item.id}')" class="text-xs font-bold tracking-wider uppercase text-[#1E1423] dark:text-[#E8D7B5] hover:underline flex items-center gap-1">
               <span>View Details</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </button>
@@ -768,31 +770,31 @@ function renderCuratedCollections() {
                 ${col.title}
               </h3>
 
-              ${col.subtitle ? `<p class="text-xs sm:text-sm font-medium italic text-[#BA9E6B] dark:text-[#E8D7B5] mb-3">${col.subtitle}</p>` : ''}
+              ${col.subtitle ? `<p class="text-xs sm:text-sm font-semibold italic text-[#7A5520] dark:text-[#E8D7B5] mb-3">${col.subtitle}</p>` : ''}
 
-              <p class="text-xs sm:text-sm text-[#302137]/80 dark:text-[#FAF7F2]/80 font-light leading-relaxed mb-4">
+              <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2]/85 font-normal leading-relaxed mb-4">
                 ${col.description}
               </p>
 
               <!-- Featured Boutiques Preview Pills -->
               <div class="mb-4">
-                <span class="text-[10px] uppercase tracking-wider font-semibold text-[#302137]/60 dark:text-[#E8D7B5]/80 block mb-2">Featured Ateliers & Designers:</span>
+                <span class="text-xs uppercase tracking-wider font-bold text-[#7A5520] dark:text-[#E8D7B5] block mb-2">Featured Ateliers & Designers:</span>
                 <div class="flex flex-wrap gap-2">
                   ${featuredListings.map(item => `
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#FAF7F2] dark:bg-[#1E1423] border border-[#302137]/10 dark:border-[#E8D7B5]/25 text-[#302137] dark:text-[#FAF7F2] font-medium shadow-2xs">
-                      <span class="w-1.5 h-1.5 rounded-full bg-[#E8D7B5]"></span>
-                      ${item.name} <span class="opacity-60 text-[10px]">(${item.city})</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#FAF7F2] dark:bg-[#1E1423] border border-[#302137]/15 dark:border-[#E8D7B5]/25 text-[#1E1423] dark:text-[#FAF7F2] font-semibold shadow-2xs">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#8C6226] dark:bg-[#E8D7B5]"></span>
+                      ${item.name} <span class="opacity-75 text-xs">(${item.city})</span>
                     </span>
                   `).join('')}
                 </div>
               </div>
 
               <!-- Curator Note Quote -->
-              <div class="p-3.5 sm:p-4 rounded-2xl bg-[#FAF7F2] dark:bg-[#1E1423] border-l-2 border-[#E8D7B5] mb-5">
-                <p class="text-xs italic text-[#302137]/85 dark:text-[#FAF7F2]/85 leading-relaxed">
+              <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#1E1423] border-l-4 border-[#8C6226] dark:border-[#E8D7B5] shadow-xs mb-5">
+                <p class="text-sm italic font-medium text-[#1E1423] dark:text-[#FAF7F2]/90 leading-relaxed">
                   "${col.curatorQuote}"
                 </p>
-                <span class="text-[10px] uppercase tracking-wider font-semibold text-[#E8D7B5] block mt-1.5">— MODEVA Editorial Board</span>
+                <span class="text-xs uppercase tracking-wider font-bold text-[#7A5520] dark:text-[#E8D7B5] block mt-2">— MODEVA Editorial Board</span>
               </div>
             </div>
 
@@ -908,7 +910,7 @@ function renderDirectoryListings() {
                   Verified
                 </span>
               ` : ''}
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#FAF7F2]/90 text-[#302137]">
+              <span class="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#FAF7F2]/95 text-[#302137] leading-tight shadow-2xs">
                 ${item.priceRange}
               </span>
             </div>
@@ -926,7 +928,7 @@ function renderDirectoryListings() {
                 <svg class="w-3.5 h-3.5 text-[#E8D7B5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
                 ${item.location}
               </span>
-              <div class="flex items-center gap-1 bg-[#302137]/80 px-2 py-0.5 rounded-full text-[11px]">
+              <div class="inline-flex items-center gap-1 bg-[#302137]/90 px-2.5 py-1 rounded-full text-[11px] leading-tight text-[#FAF7F2]">
                 <span class="text-amber-400">★</span>
                 <span class="font-bold">${item.rating}</span>
                 <span class="opacity-75">(${item.reviewCount})</span>
@@ -937,23 +939,23 @@ function renderDirectoryListings() {
           <!-- Card Content Body -->
           <div class="p-6">
             <div class="flex items-center gap-2 mb-2">
-              <span class="text-[11px] font-semibold uppercase tracking-wider text-[#302137]/70 dark:text-[#E8D7B5]">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#1E1423] dark:text-[#E8D7B5]">
                 ${item.category}
               </span>
             </div>
 
-            <h3 class="font-serif text-2xl font-bold text-[#302137] dark:text-[#FAF7F2] hover:text-[#E8D7B5] transition-colors cursor-pointer mb-2.5" onclick="openListingModal('${item.id}')">
+            <h3 class="font-serif text-2xl font-bold text-[#1E1423] dark:text-[#FAF7F2] hover:text-[#BA9E6B] transition-colors cursor-pointer mb-2.5" onclick="openListingModal('${item.id}')">
               ${item.name}
             </h3>
 
-            <p class="text-xs md:text-sm text-[#302137]/75 dark:text-[#FAF7F2]/75 line-clamp-2 font-light leading-relaxed mb-4">
+            <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2]/85 line-clamp-2 font-normal leading-relaxed mb-4">
               ${item.description}
             </p>
 
             <!-- Specialty Tags -->
             <div class="flex flex-wrap gap-1.5 mb-2">
               ${item.tags.map(t => `
-                <span class="text-[10px] tracking-wide uppercase px-2.5 py-1 rounded-md bg-[#FAF7F2] dark:bg-[#1E1423] text-[#302137]/80 dark:text-[#E8D7B5] border border-[#302137]/5 dark:border-[#E8D7B5]/15">
+                <span class="text-xs tracking-wide uppercase px-2.5 py-1 rounded-md bg-[#FAF7F2] dark:bg-[#1E1423] text-[#1E1423] dark:text-[#E8D7B5] font-semibold border border-[#302137]/15 dark:border-[#E8D7B5]/15 shadow-2xs">
                   ${t}
                 </span>
               `).join('')}
@@ -963,9 +965,9 @@ function renderDirectoryListings() {
 
         <!-- Card Footer CTA -->
         <div class="p-6 pt-0 border-t border-[#302137]/10 dark:border-[#E8D7B5]/10 mt-2 flex items-center justify-between">
-          <button onclick="openListingModal('${item.id}')" class="w-full py-2.5 px-4 rounded-xl bg-[#302137] text-[#E8D7B5] dark:bg-[#E8D7B5] dark:text-[#302137] font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-            <span>View Full Atelier Dossier</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          <button onclick="openListingModal('${item.id}')" class="w-full py-2.5 px-4 rounded-xl bg-[#302137] text-[#FAF7F2] dark:bg-[#E8D7B5] dark:text-[#302137] font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-[#1E1423] transition-colors shadow-sm">
+            <span class="text-[#FAF7F2] dark:text-[#302137]">View Full Atelier Dossier</span>
+            <svg class="w-4 h-4 text-[#E8D7B5] dark:text-[#302137]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </button>
         </div>
       </article>
@@ -1044,16 +1046,16 @@ function renderTrendingShowcase() {
           <span class="absolute top-4 left-4 text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full bg-[#E8D7B5] text-[#302137]">
             ${brand.tag}
           </span>
-          <span class="absolute bottom-4 left-4 text-xs tracking-wider text-[#E8D7B5] font-light flex items-center gap-1.5">
+          <span class="absolute bottom-4 left-4 text-xs tracking-wider text-white font-semibold flex items-center gap-1.5 drop-shadow-md">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
             ${brand.city}
           </span>
         </div>
 
         <div class="p-6">
-          <span class="text-[11px] font-semibold uppercase tracking-wider text-[#E8D7B5] block mb-1.5">${brand.specialty}</span>
-          <h4 class="font-serif text-2xl font-bold text-[#302137] dark:text-[#FAF7F2] mb-3">${brand.name}</h4>
-          <p class="text-xs text-[#302137]/75 dark:text-[#FAF7F2]/75 font-light leading-relaxed">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#7A5520] dark:text-[#E8D7B5] block mb-2">${brand.specialty}</span>
+          <h4 class="font-serif text-2xl font-bold text-[#1E1423] dark:text-[#FAF7F2] mb-3">${brand.name}</h4>
+          <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2]/85 font-normal leading-relaxed">
             ${brand.description}
           </p>
         </div>
@@ -1316,26 +1318,26 @@ function renderJournalArticles() {
         <div class="bg-white dark:bg-[#281B2E] rounded-3xl border border-[#302137]/10 dark:border-[#E8D7B5]/20 p-5 md:p-6 shadow-sm hover:shadow-lg transition-all flex flex-col sm:flex-row gap-5 group cursor-pointer" onclick="openJournalModal('${art.id}')">
           <div class="w-full sm:w-36 h-36 rounded-2xl overflow-hidden relative flex-shrink-0">
             <img src="${art.image}" alt="${art.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            <span class="absolute top-2 left-2 text-[10px] font-semibold uppercase px-2 py-0.5 rounded-full bg-[#302137]/80 text-[#E8D7B5] backdrop-blur-sm">
+            <span class="inline-flex items-center justify-center absolute top-2 left-2 text-[10px] font-semibold uppercase px-2.5 py-1 rounded-full bg-[#302137]/90 text-[#E8D7B5] backdrop-blur-sm border border-[#E8D7B5]/30 leading-tight">
               ${art.readTime}
             </span>
           </div>
 
           <div class="flex-1 flex flex-col justify-between">
             <div>
-              <span class="text-[11px] font-semibold uppercase tracking-wider text-[#E8D7B5] block mb-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#BA9E6B] dark:text-[#E8D7B5] block mb-1">
                 ${art.category}
               </span>
-              <h4 class="font-serif text-lg md:text-xl font-bold text-[#302137] dark:text-[#FAF7F2] group-hover:text-[#E8D7B5] transition-colors leading-snug mb-2">
+              <h4 class="font-serif text-lg md:text-xl font-bold text-[#1E1423] dark:text-[#FAF7F2] group-hover:text-[#BA9E6B] transition-colors leading-snug mb-2">
                 ${art.title}
               </h4>
-              <p class="text-xs text-[#302137]/70 dark:text-[#FAF7F2]/70 line-clamp-2 font-light">
+              <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2]/80 line-clamp-2 font-normal leading-relaxed">
                 ${art.excerpt}
               </p>
             </div>
 
-            <div class="pt-2 flex items-center justify-between text-xs font-semibold text-[#302137] dark:text-[#E8D7B5] mt-2">
-              <span class="text-[11px] opacity-75 font-normal">${art.date}</span>
+            <div class="pt-2 flex items-center justify-between text-xs font-bold text-[#1E1423] dark:text-[#E8D7B5] mt-2">
+              <span class="text-xs opacity-85 font-medium">${art.date}</span>
               <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Read
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
@@ -1410,19 +1412,19 @@ function openListingModal(listingId) {
           <!-- Badges & Title in Banner -->
           <div class="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-4 z-10">
             <div>
-              <div class="flex items-center gap-2 mb-2">
-                <span class="px-3 py-1 text-xs uppercase tracking-widest font-semibold rounded-full bg-[#E8D7B5] text-[#302137]">
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class="inline-flex items-center justify-center px-3.5 py-1.5 text-xs uppercase tracking-widest font-semibold rounded-full bg-[#E8D7B5] text-[#302137] shadow-sm leading-none">
                   ${item.category}
                 </span>
                 ${item.verified ? `
-                  <span class="px-3 py-1 text-xs uppercase tracking-widest font-semibold rounded-full bg-white/20 text-[#FAF7F2] backdrop-blur-sm border border-white/20 flex items-center gap-1">
+                  <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs uppercase tracking-widest font-semibold rounded-full bg-white/20 text-[#FAF7F2] backdrop-blur-sm border border-white/20 leading-none shadow-sm">
                     <svg class="w-3.5 h-3.5 text-[#E8D7B5]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                     Verified Boutique
                   </span>
                 ` : ''}
               </div>
-              <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[#FAF7F2]">${item.name}</h2>
-              <p class="text-xs sm:text-sm text-[#E8D7B5] mt-1 flex items-center gap-1.5">
+              <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white drop-shadow-md">${item.name}</h2>
+              <p class="image-overlay-text text-xs sm:text-sm text-[#F8ECD5] mt-1 flex items-center gap-1.5 font-semibold drop-shadow-md">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
                 ${item.address}
               </p>
@@ -1452,40 +1454,40 @@ function openListingModal(listingId) {
           
           <!-- Left Column: Editorial Overview & Reviews -->
           <div class="md:col-span-7">
-            <h4 class="text-xs uppercase tracking-widest font-semibold text-[#E8D7B5] mb-2">Editorial Narrative</h4>
-            <h3 class="font-serif text-2xl font-bold text-[#302137] dark:text-[#FAF7F2] mb-4">${item.description}</h3>
+            <h4 class="text-xs uppercase tracking-widest font-bold text-[#BA9E6B] dark:text-[#E8D7B5] mb-2">Editorial Narrative</h4>
+            <h3 class="font-serif text-2xl font-bold text-[#1E1423] dark:text-[#FAF7F2] mb-4">${item.description}</h3>
             
-            <p class="text-sm text-[#302137]/80 dark:text-[#FAF7F2]/80 font-light leading-relaxed mb-6">
+            <p class="text-base text-[#261A2B] dark:text-[#FAF7F2]/85 font-normal leading-relaxed mb-6">
               ${item.fullStory || item.description}
             </p>
 
             <div class="mb-6">
-              <h4 class="text-xs uppercase tracking-widest font-semibold text-[#302137] dark:text-[#E8D7B5] mb-2.5">House Specialties & Craft</h4>
-              <p class="text-xs sm:text-sm text-[#302137]/75 dark:text-[#FAF7F2]/75 font-light bg-white dark:bg-[#281B2E] p-3.5 rounded-xl border border-[#302137]/10 dark:border-[#E8D7B5]/20">
+              <h4 class="text-xs uppercase tracking-widest font-bold text-[#1E1423] dark:text-[#E8D7B5] mb-2.5">House Specialties & Craft</h4>
+              <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2]/85 font-normal bg-white dark:bg-[#281B2E] p-4 rounded-xl border border-[#302137]/15 dark:border-[#E8D7B5]/20 leading-relaxed shadow-2xs">
                 ${item.specialties}
               </p>
             </div>
 
             <!-- Verified Reviews in Modal -->
-            <div class="mt-8 pt-6 border-t border-[#302137]/10 dark:border-[#E8D7B5]/20">
+            <div class="mt-8 pt-6 border-t border-[#302137]/15 dark:border-[#E8D7B5]/20">
               <div class="flex items-center justify-between mb-4">
-                <h4 class="font-serif text-xl font-bold text-[#302137] dark:text-[#FAF7F2]">Client Impressions</h4>
-                <button onclick="closeListingModal(); openWriteReviewModal(); document.getElementById('reviewListingSelect').value='${item.id}'" class="text-xs font-semibold uppercase tracking-wider text-[#302137] dark:text-[#E8D7B5] underline">
+                <h4 class="font-serif text-xl font-bold text-[#1E1423] dark:text-[#FAF7F2]">Client Impressions</h4>
+                <button onclick="closeListingModal(); openWriteReviewModal(); document.getElementById('reviewListingSelect').value='${item.id}'" class="text-xs font-bold uppercase tracking-wider text-[#1E1423] dark:text-[#E8D7B5] underline">
                   Write Review
                 </button>
               </div>
 
               <div class="space-y-3">
                 ${(item.reviews || []).map(r => `
-                  <div class="p-3.5 rounded-xl bg-white dark:bg-[#281B2E] border border-[#302137]/5 dark:border-[#E8D7B5]/15">
-                    <div class="flex items-center justify-between mb-1">
-                      <span class="text-xs font-bold text-[#302137] dark:text-[#FAF7F2]">${r.author}</span>
-                      <div class="flex items-center text-amber-500 text-xs">
+                  <div class="p-4 rounded-xl bg-white dark:bg-[#281B2E] border border-[#302137]/10 dark:border-[#E8D7B5]/15 shadow-2xs">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-sm font-bold text-[#1E1423] dark:text-[#FAF7F2]">${r.author}</span>
+                      <div class="flex items-center text-amber-500 text-sm">
                         ${'★'.repeat(r.rating)}
                       </div>
                     </div>
-                    <p class="text-xs text-[#302137]/75 dark:text-[#FAF7F2]/75 font-light">${r.comment}</p>
-                    <span class="text-[10px] text-[#302137]/50 dark:text-[#FAF7F2]/50 block mt-1">${r.date} ${r.verified ? '• Verified Atelier Visit' : ''}</span>
+                    <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2]/85 font-normal leading-relaxed">${r.comment}</p>
+                    <span class="text-xs text-[#302137]/75 dark:text-[#FAF7F2]/60 block mt-1.5 font-medium">${r.date} ${r.verified ? '• Verified Atelier Visit' : ''}</span>
                   </div>
                 `).join('')}
               </div>
@@ -1494,29 +1496,29 @@ function openListingModal(listingId) {
 
           <!-- Right Column: Practical Details Box -->
           <div class="md:col-span-5 flex flex-col gap-5">
-            <div class="p-6 rounded-2xl bg-white dark:bg-[#281B2E] border border-[#302137]/10 dark:border-[#E8D7B5]/20 space-y-4 shadow-sm">
-              <h4 class="font-serif text-lg font-bold text-[#302137] dark:text-[#FAF7F2] border-b border-[#302137]/10 dark:border-[#E8D7B5]/15 pb-2">
+            <div class="p-6 rounded-2xl bg-white dark:bg-[#281B2E] border border-[#302137]/15 dark:border-[#E8D7B5]/20 space-y-4 shadow-sm">
+              <h4 class="font-serif text-lg font-bold text-[#1E1423] dark:text-[#FAF7F2] border-b border-[#302137]/15 dark:border-[#E8D7B5]/15 pb-2">
                 Atelier Directory Record
               </h4>
 
               <div>
-                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#302137]/60 dark:text-[#E8D7B5]/70 block">Operating Hours</span>
-                <p class="text-xs text-[#302137] dark:text-[#FAF7F2] font-medium mt-0.5">${item.hours}</p>
+                <span class="text-xs uppercase tracking-wider font-bold text-[#1E1423] dark:text-[#E8D7B5] block">Operating Hours</span>
+                <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2] font-semibold mt-0.5">${item.hours}</p>
               </div>
 
               <div>
-                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#302137]/60 dark:text-[#E8D7B5]/70 block">Direct Atelier Contact</span>
-                <p class="text-xs text-[#302137] dark:text-[#FAF7F2] font-medium mt-0.5">${item.phone}</p>
+                <span class="text-xs uppercase tracking-wider font-bold text-[#1E1423] dark:text-[#E8D7B5] block">Direct Atelier Contact</span>
+                <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2] font-semibold mt-0.5">${item.phone}</p>
               </div>
 
               <div>
-                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#302137]/60 dark:text-[#E8D7B5]/70 block">Price Positioning</span>
-                <p class="text-xs text-[#302137] dark:text-[#FAF7F2] font-medium mt-0.5">${item.priceRange} — High Editorial / Bespoke</p>
+                <span class="text-xs uppercase tracking-wider font-bold text-[#1E1423] dark:text-[#E8D7B5] block">Price Positioning</span>
+                <p class="text-sm text-[#261A2B] dark:text-[#FAF7F2] font-semibold mt-0.5">${item.priceRange} — High Editorial / Bespoke</p>
               </div>
 
               <div>
-                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#302137]/60 dark:text-[#E8D7B5]/70 block">Official Online Presence</span>
-                <a href="${item.website}" target="_blank" rel="noopener noreferrer" class="text-xs text-[#302137] dark:text-[#E8D7B5] font-semibold underline break-all mt-0.5 block hover:opacity-80">
+                <span class="text-xs uppercase tracking-wider font-bold text-[#1E1423] dark:text-[#E8D7B5] block">Official Online Presence</span>
+                <a href="${item.website}" target="_blank" rel="noopener noreferrer" class="text-sm text-[#1E1423] dark:text-[#E8D7B5] font-bold underline break-all mt-0.5 block hover:opacity-80">
                   ${item.website}
                 </a>
               </div>
@@ -1855,6 +1857,16 @@ function setupScrollSpy() {
         link.classList.remove('active');
       }
     });
+
+    // Elevate Header on Scroll
+    const mainHeader = document.getElementById('mainHeader');
+    if (mainHeader) {
+      if (window.scrollY > 20) {
+        mainHeader.classList.add('scrolled');
+      } else {
+        mainHeader.classList.remove('scrolled');
+      }
+    }
   }
 
   window.addEventListener('scroll', updateActiveNavLinks, { passive: true });

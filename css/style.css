@@ -44,7 +44,7 @@ html {
   scroll-padding-top: var(--nav-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   max-width: 100vw !important;
   width: 100% !important;
 }
@@ -54,18 +54,371 @@ body {
   background-color: var(--color-ivory);
   color: var(--color-plum);
   transition: background-color 0.4s ease, color 0.4s ease;
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   max-width: 100vw !important;
   width: 100% !important;
   position: relative;
 }
 
-/* Ensure sticky header spans exactly 100% without horizontal shift */
+/* ==========================================================================
+   Light Mode Global Visibility & Typography Boost
+   ========================================================================== */
+body:not(.dark-mode) {
+  color: #1E1423;
+  font-weight: 400;
+}
+
+/* Ensure all standard paragraphs have high contrast in light mode, EXCEPT when inside dark overlays/cards */
+body:not(.dark-mode) p:not(.category-desc):not(.image-overlay-text):not(.text-white):not([class*="text-white"]):not([class*="text-[#FAF7F2]"]):not([class*="text-[#E8D7B5]"]):not(#categoriesGridContainer p):not(.bg-\[\#302137\] p):not([class*="bg-\[\#302137\]"] p):not([class*="bg-gradient-to-t"] ~ * p) {
+  color: #261A2B;
+}
+
+/* Radiant, bright, high-visibility text inside image cards in ALL modes */
+#categoriesGridContainer p,
+.category-desc,
+.image-overlay-text {
+  color: #FFFFFF !important;
+  opacity: 0.98 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85), 0 2px 10px rgba(0, 0, 0, 0.65) !important;
+  font-weight: 450 !important;
+}
+
+#categoriesGridContainer h3,
+.category-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 16px rgba(0, 0, 0, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+#categoriesGridContainer .category-tag,
+.category-tag {
+  color: #FFFFFF !important;
+  background: rgba(30, 20, 35, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 215, 181, 0.75) !important;
+  padding: 4px 12px !important;
+  border-radius: 9999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45) !important;
+  width: fit-content !important;
+}
+
+/* ==========================================================================
+   High Contrast Brown / Bronze Text in Light Mode
+   ========================================================================== */
+/* Transform pale champagne / gold text on light backgrounds to rich saddle bronze (#7A5520) */
+body:not(.dark-mode) .text-\[\#E8D7B5\]:not(button):not(button *):not(a[class*="bg-"]):not(a[class*="bg-"] *):not([class*="bg-\[\#302137\]"]):not([class*="bg-\[\#302137\]"] *):not(#categoriesGridContainer *):not(.badge-verified):not(.badge-micro),
+body:not(.dark-mode) .text-\[\#BA9E6B\]:not(button):not(button *):not(a[class*="bg-"]):not(a[class*="bg-"] *):not([class*="bg-\[\#302137\]"]):not([class*="bg-\[\#302137\]"] *):not(#categoriesGridContainer *) {
+  color: #7A5520 !important;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   CTA Buttons & Dark Action Elements — Radiant Bright Ivory Text
+   ========================================================================== */
+/* Any button or CTA element with dark background MUST have bright, radiant ivory/white text */
+body:not(.dark-mode) button[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn),
+body:not(.dark-mode) a[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn),
+body:not(.dark-mode) button[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn) span:not(.theme-toggle-icon),
+body:not(.dark-mode) a[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn) span,
+body:not(.dark-mode) button[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn) svg,
+body:not(.dark-mode) a[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn) svg,
+body:not(.dark-mode) button[onclick*="openListingModal"],
+body:not(.dark-mode) button[onclick*="openListingModal"] span,
+body:not(.dark-mode) button[onclick*="openListingModal"] svg,
+body:not(.dark-mode) button[onclick*="openCollectionModal"],
+body:not(.dark-mode) button[onclick*="openCollectionModal"] span,
+body:not(.dark-mode) button[onclick*="openCollectionModal"] svg,
+body:not(.dark-mode) #heroSearchForm button,
+body:not(.dark-mode) #heroSearchForm button span,
+body:not(.dark-mode) #heroSearchForm button svg {
+  color: #FAF7F2 !important;
+  font-weight: 700 !important;
+}
+
+body:not(.dark-mode) button[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn):hover span,
+body:not(.dark-mode) a[class~="bg-\[\#302137\]"]:not(.theme-toggle-btn):not(.footer-social-btn):hover span {
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   Theme Switcher Button & Icon (Guaranteed High Contrast in Light & Dark Mode)
+   ========================================================================== */
+.theme-toggle-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.theme-toggle-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 20px !important;
+  height: 20px !important;
+  line-height: 1 !important;
+}
+
+.theme-toggle-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+  display: block !important;
+  transition: transform 0.3s ease, color 0.2s ease, stroke 0.2s ease !important;
+}
+
+.theme-toggle-btn:hover .theme-toggle-icon svg {
+  transform: rotate(18deg) scale(1.1);
+}
+
+/* Light Mode: Midnight Plum Moon Icon with high contrast against ivory */
+body:not(.dark-mode) .theme-toggle-btn {
+  background-color: transparent !important;
+  border: 1px solid rgba(48, 33, 55, 0.25) !important;
+  box-shadow: 0 1px 3px rgba(48, 33, 55, 0.05) !important;
+}
+
+body:not(.dark-mode) .theme-toggle-btn:hover {
+  background-color: rgba(48, 33, 55, 0.08) !important;
+  border-color: rgba(48, 33, 55, 0.45) !important;
+  box-shadow: 0 2px 6px rgba(48, 33, 55, 0.12) !important;
+}
+
+body:not(.dark-mode) .theme-toggle-icon,
+body:not(.dark-mode) .theme-toggle-icon svg,
+body:not(.dark-mode) .theme-toggle-btn svg {
+  color: #1E1423 !important;
+  stroke: #1E1423 !important;
+  fill: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Dark Mode: Radiant Warm Champagne Sun Icon */
+body.dark-mode .theme-toggle-btn,
+.dark .theme-toggle-btn {
+  background-color: transparent !important;
+  border: 1px solid rgba(232, 215, 181, 0.35) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .theme-toggle-btn:hover,
+.dark .theme-toggle-btn:hover {
+  background-color: rgba(232, 215, 181, 0.15) !important;
+  border-color: rgba(232, 215, 181, 0.6) !important;
+  box-shadow: 0 0 12px rgba(232, 215, 181, 0.25) !important;
+}
+
+body.dark-mode .theme-toggle-icon,
+body.dark-mode .theme-toggle-icon svg,
+body.dark-mode .theme-toggle-btn svg,
+.dark .theme-toggle-icon,
+.dark .theme-toggle-icon svg,
+.dark .theme-toggle-btn svg {
+  color: #E8D7B5 !important;
+  stroke: #E8D7B5 !important;
+  fill: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ==========================================================================
+   Footer Social Media Icons (High Contrast Guarantee)
+   ========================================================================== */
+.footer-social-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 9999px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.footer-social-btn svg {
+  width: 17px !important;
+  height: 17px !important;
+  display: block !important;
+  transition: transform 0.25s ease, color 0.2s ease, fill 0.2s ease !important;
+}
+
+.footer-social-btn:hover svg {
+  transform: scale(1.15) !important;
+}
+
+/* Light Mode: Midnight Plum icon on clear tinted surface with dark stroke/fill */
+body:not(.dark-mode) .footer-social-btn {
+  background-color: rgba(48, 33, 55, 0.08) !important;
+  border: 1px solid rgba(48, 33, 55, 0.25) !important;
+  box-shadow: 0 1px 3px rgba(48, 33, 55, 0.06) !important;
+}
+
+body:not(.dark-mode) .footer-social-btn svg {
+  color: #1E1423 !important;
+  fill: #1E1423 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body:not(.dark-mode) .footer-social-btn:hover {
+  background-color: #302137 !important;
+  border-color: #302137 !important;
+  box-shadow: 0 4px 14px rgba(48, 33, 55, 0.28) !important;
+}
+
+body:not(.dark-mode) .footer-social-btn:hover svg {
+  color: #FAF7F2 !important;
+  fill: #FAF7F2 !important;
+}
+
+/* Dark Mode: Radiant champagne/ivory icon on subtle dark surface */
+body.dark-mode .footer-social-btn,
+.dark .footer-social-btn {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(232, 215, 181, 0.25) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.dark-mode .footer-social-btn svg,
+.dark .footer-social-btn svg {
+  color: #FAF7F2 !important;
+  fill: #FAF7F2 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.dark-mode .footer-social-btn:hover,
+.dark .footer-social-btn:hover {
+  background-color: #E8D7B5 !important;
+  border-color: #E8D7B5 !important;
+  box-shadow: 0 4px 16px rgba(232, 215, 181, 0.35) !important;
+}
+
+body.dark-mode .footer-social-btn:hover svg,
+.dark .footer-social-btn:hover svg {
+  color: #1E1423 !important;
+  fill: #1E1423 !important;
+}
+
+/* Boost brown/gold SVGs in Light Mode */
+body:not(.dark-mode) svg.text-\[\#E8D7B5\],
+body:not(.dark-mode) svg.text-\[\#BA9E6B\],
+body:not(.dark-mode) .text-\[\#E8D7B5\] svg,
+body:not(.dark-mode) .text-\[\#BA9E6B\] svg {
+  color: #8C6226 !important;
+}
+
+/* Boost quote borders and section accent lines in Light Mode */
+body:not(.dark-mode) .border-\[\#E8D7B5\],
+body:not(.dark-mode) .border-l-2.border-\[\#E8D7B5\],
+body:not(.dark-mode) .border-l-4.border-\[\#E8D7B5\] {
+  border-color: #8C6226 !important;
+}
+
+/* Upgrade light font-weight in light mode so characters never wash out */
+body:not(.dark-mode) .font-light {
+  font-weight: 400 !important;
+}
+
+/* Elevate low-opacity utility text classes in Light Mode for WCAG AAA visibility */
+body:not(.dark-mode) .text-\[\#302137\]\/50 {
+  color: #382542 !important;
+  font-weight: 500;
+}
+
+body:not(.dark-mode) .text-\[\#302137\]\/60 {
+  color: #302137 !important;
+  font-weight: 500;
+}
+
+body:not(.dark-mode) .text-\[\#302137\]\/70,
+body:not(.dark-mode) .text-\[\#302137\]\/75 {
+  color: #241729 !important;
+  font-weight: 450;
+}
+
+body:not(.dark-mode) .text-\[\#302137\]\/80 {
+  color: #1A111E !important;
+  font-weight: 500;
+}
+
+/* Scale up tiny micro-text sizes across light mode for effortless reading */
+body:not(.dark-mode) .text-\[10px\]:not(.badge-micro) {
+  font-size: 11.5px !important;
+}
+
+body:not(.dark-mode) .text-\[11px\] {
+  font-size: 12.5px !important;
+}
+
+/* Enhance form labels, inputs, and placeholders in Light Mode */
+body:not(.dark-mode) label {
+  color: #1A111E !important;
+  font-weight: 600 !important;
+}
+
+body:not(.dark-mode) input,
+body:not(.dark-mode) select,
+body:not(.dark-mode) textarea {
+  color: #1A111E !important;
+  font-weight: 500;
+  border-color: rgba(48, 33, 55, 0.22) !important;
+}
+
+body:not(.dark-mode) input::placeholder,
+body:not(.dark-mode) textarea::placeholder {
+  color: rgba(48, 33, 55, 0.65) !important;
+  font-weight: 400;
+}
+
+/* Crisp card, section, and input borders in Light Mode */
+body:not(.dark-mode) .border-\[\#302137\]\/5 {
+  border-color: rgba(48, 33, 55, 0.12) !important;
+}
+
+body:not(.dark-mode) .border-\[\#302137\]\/10 {
+  border-color: rgba(48, 33, 55, 0.18) !important;
+}
+
+body:not(.dark-mode) .border-\[\#302137\]\/15 {
+  border-color: rgba(48, 33, 55, 0.24) !important;
+}
+
+body:not(.dark-mode) .border-\[\#302137\]\/20 {
+  border-color: rgba(48, 33, 55, 0.3) !important;
+}
+
+/* Ensure sticky header spans exactly 100% without horizontal shift and elevates on scroll */
 #mainHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   width: 100% !important;
   max-width: 100vw !important;
   left: 0;
   right: 0;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+#mainHeader.scrolled {
+  box-shadow: 0 4px 20px -2px rgba(48, 33, 55, 0.12);
+  background: rgba(250, 247, 242, 0.98) !important;
+  border-bottom: 1px solid rgba(48, 33, 55, 0.14) !important;
+}
+
+body.dark-mode #mainHeader.scrolled,
+.dark #mainHeader.scrolled {
+  box-shadow: 0 6px 25px -2px rgba(0, 0, 0, 0.55);
+  background: rgba(30, 20, 35, 0.98) !important;
+  border-bottom: 1px solid rgba(232, 215, 181, 0.25) !important;
 }
 
 /* Dark mode theme variables */
@@ -156,15 +509,15 @@ body.dark-mode ::-webkit-scrollbar-track {
 }
 
 .glass-ivory {
-  background: rgba(250, 247, 242, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(48, 33, 55, 0.08);
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(48, 33, 55, 0.12);
 }
 
 body.dark-mode .glass-ivory {
-  background: rgba(30, 20, 35, 0.94);
-  border-bottom: 1px solid rgba(232, 215, 181, 0.15);
+  background: rgba(30, 20, 35, 0.96);
+  border-bottom: 1px solid rgba(232, 215, 181, 0.2);
 }
 
 /* Card hover transitions */
@@ -238,21 +591,65 @@ body.dark-mode .badge-verified {
   animation: fadeInSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Active Nav Indicator */
-.nav-link.active {
-  color: var(--color-champagne) !important;
+/* Desktop Navigation Links */
+.nav-link {
+  color: var(--color-plum) !important;
+  opacity: 0.85;
   font-weight: 600;
   position: relative;
+  transition: opacity 0.25s ease, color 0.25s ease;
+  padding: 4px 0;
 }
+
+.nav-link:hover {
+  opacity: 1 !important;
+  color: var(--color-plum) !important;
+}
+
+/* Active Nav Indicator — High Contrast in Light Mode */
+.nav-link.active {
+  color: var(--color-plum) !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+  position: relative;
+}
+
 .nav-link.active::after {
   content: '';
   position: absolute;
   bottom: -4px;
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: var(--color-champagne);
+  height: 2.5px;
+  background-color: var(--color-plum);
   border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(48, 33, 55, 0.25);
+}
+
+/* Dark Mode Navigation Links */
+body.dark-mode .nav-link,
+.dark .nav-link {
+  color: #FAF7F2 !important;
+  opacity: 0.85;
+}
+
+body.dark-mode .nav-link:hover,
+.dark .nav-link:hover {
+  color: var(--color-champagne) !important;
+  opacity: 1 !important;
+}
+
+body.dark-mode .nav-link.active,
+.dark .nav-link.active {
+  color: var(--color-champagne) !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+}
+
+body.dark-mode .nav-link.active::after,
+.dark .nav-link.active::after {
+  background-color: var(--color-champagne);
+  box-shadow: 0 0 8px rgba(232, 215, 181, 0.6);
 }
 
 /* Mobile & Tablet Hamburger Menu Active State */
